@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap CSS -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant & Lounge</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,48 +17,120 @@
       href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="stylesheet.css" />
-    <title>Restaurant & Loungue</title>
   </head>
+
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col"><h1 class="titulo">Restaurant & Loungue</h1></div>
-        <div class="col text-end">
-          <div class="row">
-            <div class="col">
-              <img src="https://i.imgur.com/1EKrQIi.png" alt="carrito" />
+      <header>
+        <div class="row d-flex justify-content-between align-items-center">
+          <div class="col mt-3">
+            <h3 style="font-family: 'Satisfy', cursive">Restaurant & Lounge</h3>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <a href="#" id="itemsCarro"
+              ><img
+                src="./imagenes/CarroCompras.png"
+                style="width: 45px; height: 45px"
+            /></a>
+            <span id="textoItems" class="mt-3">0 items</span>
+          </div>
+        </div>
+      </header>
+      <div>
+        <div>
+          <img src="./imagenes/BurgerBanner.png" style="width: 100%" />
+        </div>
+      </div>
+      <nav
+        class="
+          navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark
+          bg-dark
+        "
+        style="height: 4em"
+      >
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" id="boton1">Burguers</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" id="boton2">Tacos</a></li>
+            <li class="nav-item"><a class="nav-link" id="boton3">Salads</a></li>
+            <li class="nav-item">
+              <a class="nav-link" id="boton4">Desserts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="boton5">Drinks and Sides</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <h2 class="text-center" id="tituloCategoria"></h2>
+      <div>
+        <div class="container-fluid" style="padding: 2em">
+          <div class="row d-flex" id="cartasProductos"></div>
+        </div>
+      </div>
+      <div>
+        <div id="tablaDeProductos"></div>
+        <div id="infoProductosTotal"></div>
+      </div>
+      <div class="modal fade" id="mensaje" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cancel the order</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="col">
-              <div>
-                <p class="titulo"><a id="clicks">0</a> Items</p>
-              </div>
+            <div class="modal-body">
+              Are you sure about canceling the order?
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-dismiss="modal"
+                id="cancelOrder"
+              >
+                Yes, I want to cancel the order
+              </button>
+              <button type="button" class="btn btn-light" data-dismiss="modal">
+                No, I want to continue adding products
+              </button>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <img src="https://i.imgur.com/S8Ffdqa.png" alt="banner" />
+      </div>  
+      <footer>
+        <div class="text-center mt-2 mb-3">
+          <span
+            >Contact us: +57 3123456789 - info@restaurant.com -
+            @restaurant</span
+          >
         </div>
-      </div>
-      <div class="row text-left">
-        <div class="col" id="boton1"><h4>Burgers</h4></div>
-        <div class="col" id="boton2"><h4>Tacos</h4></div>
-        <div class="col" id="boton3"><h4>Salads</h4></div>
-        <div class="col" id="boton4"><h4>Desserts</h4></div>
-        <div class="col" id="boton5"><h4>Drinks & Slides</h4></div>
-      </div>
-      <div class="row">
-        <div class="col"></div>
-      </div>
-      <div class="row" id="tarjetas"></div>
+      </footer>
     </div>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"
     ></script>
-    <script src="main.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
   </body>
 </html>
